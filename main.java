@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+// Main driver file
+
 public class main extends tasks{
 
 	public static void main(String[] args) {
@@ -30,7 +32,7 @@ public class main extends tasks{
 			// if "N" exit while loop
 			if (validateResponse(title) != true) {
 				break;
-			}
+			} 
 			
 			// task object
 			tasks Task = new tasks();
@@ -43,7 +45,13 @@ public class main extends tasks{
 			isPriorityValid(answer);
 			Task.priority = isPriority(answer);
 			
-			taskObjects.add(Task);
+			if (Task.priority && taskObjects.isEmpty()) {
+				taskObjects.add(Task);
+			} else if (Task.priority){
+				taskObjects.add(0, Task);
+			} else {
+				taskObjects.add(Task);
+			}
 			
 		} // end while
 		
