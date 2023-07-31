@@ -32,11 +32,16 @@ public class main extends tasks{
 			// if "N" exit while loop
 			if (validateResponse(title) != true) {
 				break;
-			} 
+			}
+			
+			// enter short description
+			System.out.println("Enter a short description for your task:");
+			String description = object.nextLine();
 			
 			// task object
 			tasks Task = new tasks();
 			Task.title = title;
+			Task.description = description;
 			
 			// priority?
 			System.out.println("Is this task a priority? (Y/N): ");

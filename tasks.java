@@ -8,11 +8,11 @@ import java.util.Scanner;
 public class tasks {
 	
 	String title;
+	String description;
 	boolean priority;
 	Scanner object = new Scanner(System.in);
 	
 	void task() {
-		this.title = title;
 		this.priority = false;
 	}
 	
@@ -53,6 +53,7 @@ public class tasks {
 		} // end while
 	} // end validResponse()
 	
+	// determines priority rating (yes/no)
 	public static boolean isPriority(String userInput) {
 		
 		String yes = "Y";
@@ -82,23 +83,28 @@ public class tasks {
 		} // end while
 	} // end isPriority()
 	
+	// determines whether the user would like to exit program
 	public static boolean validateResponse(String title) {
 		
 		String no = "N";
-		if (title.equals(no)) 
-			return false;
+		if (title.equals(no)) return false;
 		return true;
 		
 	}
 	
+	// prints task list
 	public static void print(ArrayList<tasks> list) {
 		System.out.println();
 		System.out.println("Your Task Manager List:");
-		for (tasks objects : list)
-			if (objects.priority == true)
+		for (tasks objects : list) {
+			if (objects.priority == true) {
 				System.out.println(objects.title + " (*)");
-			else 
+				System.out.println(" - Note: " + objects.description);
+			} else {
 				System.out.println(objects.title);
-	}
-
+				System.out.println(" - Note: " + objects.description);
+			}
+		} // end for
+	} // end print()
+	
 } // end class tasks()
