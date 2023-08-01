@@ -11,7 +11,6 @@ public class main extends tasks{
 		
 		ArrayList<tasks> taskObjects = new ArrayList<>();
 		
-		
 		// Scanner object
 		Scanner object = new Scanner(System.in);
 		
