@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 // class tasks 
-
 public class tasks {
 	
 	String title;
@@ -24,12 +23,9 @@ public class tasks {
 		if (userInput.equals(yes)) {
 			return false;
 		}
-		else if (userInput.equals(no)) {
-			return false;
-		}
-		else {
+		else (userInput.equals(no)) {
 			return true;
-		}	
+		}
 	} // end notEqual()
 	
 	// ensures user input is either "Y" or "N" (uses notEqual() method)
@@ -104,7 +100,7 @@ public class tasks {
 				System.out.println(objects.title);
 				System.out.println(" - Note: " + objects.description);
 			}
-		} // end for
+		} 
 	} // end print()
 	
 } // end class tasks()

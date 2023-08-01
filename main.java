@@ -5,12 +5,12 @@ import java.util.List;
 import java.util.Scanner;
 
 // Main driver file
-
 public class main extends tasks{
 
 	public static void main(String[] args) {
 		
 		ArrayList<tasks> taskObjects = new ArrayList<>();
+		
 		
 		// Scanner object
 		Scanner object = new Scanner(System.in);
@@ -30,7 +30,7 @@ public class main extends tasks{
 			String title = object.nextLine(); // get title
 			
 			// if "N" exit while loop
-			if (validateResponse(title) != true) {
+			if (validateResponse(title)) {
 				break;
 			}
 			
@@ -47,9 +47,11 @@ public class main extends tasks{
 			System.out.println("Is this task a priority? (Y/N): ");
 			String answer = object.nextLine();
 			
+			// determines priority and assigns rating to the task
 			isPriorityValid(answer);
 			Task.priority = isPriority(answer);
 			
+			// Organize ArrayList by priority -> marked as (*)
 			if (Task.priority && taskObjects.isEmpty()) {
 				taskObjects.add(Task);
 			} else if (Task.priority){
@@ -61,6 +63,7 @@ public class main extends tasks{
 		} // end while
 		
 		print(taskObjects); // print
+		
 		
 	}
 
